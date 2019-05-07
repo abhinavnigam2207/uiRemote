@@ -72,10 +72,10 @@ function routeHandle(route) {
     }
     switch(route) {
         case 'home':
-        case 'favorites': remoteList.style.display = "block"; break;
-        case 'add': addRemote.style.display = "block"; break;
-        case 'view': viewRemote.style.display = "block"; break;
-        case 'user': userDetails.style.display = "block"; break;
+        case 'favorites': remoteList.style.display = ""; break;
+        case 'add': addRemote.style.display = ""; break;
+        case 'view': viewRemote.style.display = ""; break;
+        case 'user': userDetails.style.display = ""; break;
     }
 };
 
@@ -133,7 +133,7 @@ function createAddRemote(){
     let types = CONSTANTS.typesOfRemote;
     for(let i=0; i<types.length; i++) {
         let card = document.createElement('img');
-        card.className += "col-xs-4 col-sm-4 col-md-4 col-lg-4 card-img-top-1";
+        card.className += "col-xs-5 col-sm-5 col-md-3 col-lg-3 card-img-top-1";
         card.src = `${types[i].imgsrc}`;
         card.id = `${types[i].type}`;
         card.addEventListener("click",(key)=>{
