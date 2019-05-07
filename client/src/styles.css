@@ -71,6 +71,18 @@ footer{
     padding: 0rem;
 }
 
+.red {
+    color: red;
+}
+
+.white {
+    color: white;
+}
+
+.plp-4{
+    padding-left: 4%;
+}
+
 .card-img-top{
     width: 100px;
     height: 100px;

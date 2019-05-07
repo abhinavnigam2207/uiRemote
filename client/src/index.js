@@ -151,12 +151,14 @@ function renderRemoteListUI(fav) {
     }
     for(let i=0; i<selectedRemotes.length; i++) {
         let card = document.createElement('div');
-        card.className += " col-xs-8 col-sm-5 col-md-5 col-lg-4 text-center mycard";
+        card.className += " col-xs-8 col-sm-5 col-md-5 col-lg-4 mycard";
         let imgsrc = getImageSource(selectedRemotes[i].type);
+        let fav = selectedRemotes[i].isFavourite ? `<i class="fa fa-heart red" aria-hidden="true"></i>` : `<i class="fa fa-heart-o white" aria-hidden="true"></i>`;
         card.innerHTML = `<div class="row"><img class="card-img-top col-xs-4 col-sm-4 col-md-4 col-lg-4" src="${imgsrc}" alt="Remote Img Not Found"/>
-            <div class="card-body col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="card-body col-xs-8 col-sm-8 col-md-8 col-lg-8 plp-4">
                 <p class="card-text">${selectedRemotes[i].name}</p>
-                <div>${selectedRemotes[i].company}</div>
+                <h6 class="fs">${selectedRemotes[i].company}</h6>
+                ${fav}
             </div></div>`;
         remoteList.append(card);
     }
