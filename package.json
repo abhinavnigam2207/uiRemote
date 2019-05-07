@@ -1,0 +1,23 @@
+{
+  "name": "bayzatuiremote",
+  "version": "1.0.0",
+  "description": "UI remote application",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "style-loader": "^0.23.1",
+    "yarn": "^1.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "",
+    "client": "cd client",
+    "build": "cd client",
+    "server": "cd server && node server.js"
+  },
+  "author": "Abhinav",
+  "license": "MIT"
+}

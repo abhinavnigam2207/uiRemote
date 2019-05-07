@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>UI Remote</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <main class="main-container">
+        <header id="header">
+            UI Remote
+            <i id="add" class="fas fa-plus-circle add"></i>
+        </header>
+        <div id="content">
+            <div id="remoteList" class="card-deck row routes"></div>
+            <div id="addRemote" class="row routes"></div>
+            <div id="viewRemote" class="routes">View</div>
+            <div id="userDetails" class="routes">
+                <div class="row user-infos user3">
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">User information</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                                        <img class="img-circle"
+                                                src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+                                                alt="User Pic">
+                                    </div>
+                                    <div class="col-xs-10 col-sm-10 hidden-md hidden-lg">
+                                        <strong>Abhinav Nigam</strong><br>
+                                        <dl>
+                                            <dt>User level:</dt>
+                                            <dd>Administrator</dd>
+                                            <dt>Registered since:</dt>
+                                            <dd>07/05/2019</dd>
+                                            <dt>Remotes</dt>
+                                            <dd>7</dd>
+                                            <dt>Favorites</dt>
+                                            <dd>4</dd>
+                                        </dl>
+                                    </div>
+                                    <div class=" col-md-9 col-lg-9 hidden-xs hidden-sm">
+                                        <strong>Abhinav Nigam</strong><br>
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>User level:</td>
+                                                <td>Administrator</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Registered since:</td>
+                                                <td>07/05/2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Remotes</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Favorites</td>
+                                                <td>4</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-sm btn-primary" type="button"
+                                        data-toggle="tooltip"
+                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
+                                <span class="pull-right">
+                                    <button class="btn btn-sm btn-warning" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="row footer-icons">
+                <div class="col" id="home">
+                    <i class="fas fa-home fa-2x"></i>
+                </div>
+                <div class="col" id="favorites">
+                    <i class="fas fa-heart fa-2x"></i>
+                </div>
+                <div class="col" id="user">
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

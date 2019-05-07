@@ -1,0 +1,19 @@
+body{
+    background: whitesmoke;
+    margin: 0px !important;
+}
+
+header{
+    color: grey;
+    background: black;
+    height: 45px;
+    font-size: 39px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: fantasy;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,59 @@
+[
+   {
+      "id" : 1,
+      "name" : "Drawing Room TV ",
+      "type" : "TV",
+      "company" : "Sony",
+      "model" : "SONY654HF65",
+      "isFavourite" : false
+   },
+   {
+      "id" : 2,
+      "name" : "Bed Room TV ",
+      "type" : "TV",
+      "company" : "Samsung",
+      "model" : "SAMJH75G65",
+      "isFavourite" : true
+   },
+   {
+      "id" : 3,
+      "name" : "Drawing Room AC ",
+      "type" : "AC",
+      "company" : "Voltas",
+      "model" : "VOL65HGF65HG3S",
+      "isFavourite" : false
+   },
+   {
+      "id" : 4,
+      "name" : "Bedroom Fan",
+      "type" : "fan",
+      "company" : "Symphony",
+      "model" : "SYM6HG0J3X5",
+      "isFavourite" : false
+   },
+   {
+      "id" : 5,
+      "name" : "Airtel Set Top",
+      "type" : "setTop",
+      "company" : "Airtel",
+      "model" : "AIR6576545GF",
+      "isFavourite" : true
+   },
+   {
+      "id" : 6,
+      "name" : "My Iphone",
+      "type" : "camera",
+      "company" : "Apple",
+      "model" : "GHNK67GH35GHG68H",
+      "isFavourite" : true
+   },
+   {
+      "id" : 7,
+      "name" : "Tatasky Set Top",
+      "type" : "setTop",
+      "company" : "Tatasky",
+      "model" : "TATA6JH545GF",
+      "isFavourite" : true
+   }
+
+]
