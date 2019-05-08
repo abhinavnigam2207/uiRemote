@@ -71,6 +71,38 @@ footer{
     padding: 0rem;
 }
 
+.bg-remote{
+    background-color: #cacaca;
+}
+
+.back-btn{
+    background: #038BF4;
+    padding: 1%;
+    border-radius: 20%;
+}
+
+.rem-btn{
+    background: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    padding: 4%;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.cam {
+    width: 140px;
+    height: 140px;
+    background-color: #038BF4;
+    color: white;
+    padding: 46px;
+}
+
+.remicon{
+    padding-top:1%
+}
+
 .red {
     color: red;
 }
@@ -81,6 +113,14 @@ footer{
 
 .plp-4{
     padding-left: 4%;
+}
+
+.pt-16{
+    padding-top: 16%;
+}
+
+.ml-50pc{
+    margin-left: 50%;
 }
 
 .card-img-top{
@@ -94,4 +134,42 @@ footer{
     height: 200px;
     border: 1px solid grey;
     margin: 1%;
+}
+
+.outer-circle {
+    background: #ffffff;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.inner-circle {
+    position: absolute;
+    background: #cacaca;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    top: 75%;
+    left: 75%;
+    margin: -50px 0px 0px -50px;
+    padding-top: 14px;
+    font-weight: 100;
+}
+
+.ctrlkeys{
+    width: 50px;
+    height: 45px;
+    margin: 0 auto;
+    background: white;
+}
+
+.ctrlTop{
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.ctrlBottom{
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
 }

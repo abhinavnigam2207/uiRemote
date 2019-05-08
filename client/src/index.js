@@ -1,60 +1,13 @@
 import style from "./styles.css";
-
-const CONSTANTS = {
-    typesOfRemote: [
-        {id:1, type:'TV', label: 'TV', imgsrc: 'src/assets/tv.PNG', brands: []},
-        {id:2, type:'setTop', label: 'Set-Top Box', imgsrc: 'src/assets/settop.PNG', brands: []},
-        {id:3, type:'AC', label: 'AC', imgsrc: 'src/assets/ac.PNG', brands: []},
-        {id:4, type:'fan', label: 'Fan', imgsrc: 'src/assets/fan.PNG', brands: []},
-        {id:5, type:'curtain', label: 'Curtain', imgsrc: 'src/assets/curtain.PNG', brands: []},
-        {id:6, type:'camera', label: 'Camera', imgsrc: 'src/assets/camera.PNG', brands: []},
-        {id:7, type:'Projector', label: 'Projector', imgsrc: 'src/assets/projector.PNG', brands: []},
-    ]
-};
-
-let allRemotesData = [];
-
-class RemoteList {
-    constructor(){
-        this.list = {};
-    }
-
-    getList() {
-        return this.list;
-    } 
-
-    getFavourites() {
-        return this.list.filter((remote) => remote.isFavourite == true);
-    }
-
-    addRemote() {
-        let id = Object.keys(this.list).length;
-        let item = new Remote(id);
-        this.list[id] = item;
-    }
-
-    deleteRemote(index) {
-        this.listItems[index] = undefined;
-    }
-}
-
-class Remote {
-    constructor(index){
-        this.id = index;
-        this.name = '';
-        this.type = '';
-        this.company = '';
-        this.model = '';
-        this.isFavourite = false;
-        this.createLI();
-    }
-
-    createLI() {
-
-    }
-}
+import {CONSTANTS} from "./app.constants.js";
+import {createGenericButtons, createCameraRemote,
+    createFanRemote, createACRemote, createTVRemote} from "./remoteTemplates.js";
+import {RemoteList} from "./models/remoteList.js";
+import {Remote} from "./models/remote.js";
+import {getImageSource} from "./UtilService.js";
 
 let allRemotes = new RemoteList();
+let allRemotesData = [];
 const remoteList = document.getElementById('remoteList');
 const addRemote = document.getElementById('addRemote');
 const viewRemote = document.getElementById('viewRemote');
@@ -96,36 +49,15 @@ function attachEventListeners() {
     });
 }
 
-
-function getImageSource(type) {
-    switch(type) {
-        case 'TV': return 'src/assets/tv.PNG'; break;
-        case 'AC': return 'src/assets/ac.PNG'; break;
-        case 'fan': return 'src/assets/fan.PNG'; break;
-        case 'setTop': return 'src/assets/settop.PNG'; break;
-        case 'camera': return 'src/assets/camera.PNG'; break;
-        case 'curtain': return 'src/assets/curtain.PNG'; break;
-        case 'projector': return 'src/assets/projector.PNG'; break;
-    }
-}
-
 function addRemoteonUIScreen(key) {
     addRemote.innerHTML = '';
     let back = document.createElement('i');
-    back.className = 'fas fa-arrow-left fa-2x footer-icons';
+    back.className = 'fas fa-arrow-left fa-2x footer-icons back-btn';
     back.addEventListener("click",(key)=>{
         createAddRemote();
     });
     addRemote.append(back);
-    switch(key.currentTarget.id) {
-        case 'TV': break;
-        case 'AC': break;
-        case 'fan': break;
-        case 'setTop': break;
-        case 'camera': break;
-        case 'curtain': break;
-        case 'projector': break;
-    }
+    addRemote.innerHTML += '<h3>Add Remote UI screen here.</h3>';
 }
 
 function createAddRemote(){
@@ -141,6 +73,29 @@ function createAddRemote(){
         })
         addRemote.append(card);
     }
+};
+
+function showRemote(remote) {
+    viewRemote.innerHTML = '';
+    viewRemote.className = "routes bg-remote";
+    let back = document.createElement('i');
+    back.className = 'fas fa-arrow-left fa-2x footer-icons back-btn';
+    back.addEventListener("click",(key)=>{
+        routeHandle('home');
+        renderRemoteListUI();
+    });
+    viewRemote.append(back);
+    let rem = document.createElement('div');
+    rem.className = "remote";
+    rem.innerHTML = ``;
+    switch(remote.type) {
+        case 'TV':
+        case 'setTop': rem.innerHTML += createGenericButtons() + createTVRemote(); break;
+        case 'AC': rem.innerHTML += createGenericButtons() + createACRemote(); break;
+        case 'camera': rem.innerHTML += createCameraRemote(); break;
+        case 'fan': rem.innerHTML += createGenericButtons() + createFanRemote(); break;
+    }
+    viewRemote.append(rem);
 }
 
 function renderRemoteListUI(fav) {
@@ -160,6 +115,10 @@ function renderRemoteListUI(fav) {
                 <h6 class="fs">${selectedRemotes[i].company}</h6>
                 ${fav}
             </div></div>`;
+        card.addEventListener("click",(key)=>{
+            routeHandle('view');
+            showRemote(selectedRemotes[i]);
+        })
         remoteList.append(card);
     }
 }
@@ -168,7 +127,7 @@ function init() {
     createAddRemote();
     attachEventListeners();
     const Http = new XMLHttpRequest();
-    const url='http://localhost:3001/allRemotes';
+    const url= CONSTANTS.baseUrl + 'allRemotes';
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange=(e) => {
