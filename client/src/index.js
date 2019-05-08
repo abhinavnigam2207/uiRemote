@@ -49,17 +49,6 @@ function attachEventListeners() {
     });
 }
 
-function addRemoteonUIScreen(key) {
-    addRemote.innerHTML = '';
-    let back = document.createElement('i');
-    back.className = 'fas fa-arrow-left fa-2x footer-icons back-btn';
-    back.addEventListener("click",(key)=>{
-        createAddRemote();
-    });
-    addRemote.append(back);
-    addRemote.innerHTML += '<h3>Add Remote UI screen here.</h3>';
-}
-
 function createAddRemote(){
     addRemote.innerHTML = '';
     let types = CONSTANTS.typesOfRemote;
@@ -69,7 +58,8 @@ function createAddRemote(){
         card.src = `${types[i].imgsrc}`;
         card.id = `${types[i].type}`;
         card.addEventListener("click",(key)=>{
-            addRemoteonUIScreen(key);
+            // addRemoteonUIScreen(key);
+            addRemote.innerHTML = '<h3>Add Remote UI screen here.</h3>';
         })
         addRemote.append(card);
     }
